@@ -1,2 +1,2 @@
 # Leetcode_Problems
-Solutions For Leetcode Problems
+I Practice Problem Solving in Leetcode
