@@ -5,6 +5,7 @@
 ## Array
 |  |
 | ------- |
+| [0088-merge-sorted-array](https://github.com/emy05/Leetcode_Problems/tree/master/0088-merge-sorted-array) |
 | [0268-missing-number](https://github.com/emy05/Leetcode_Problems/tree/master/0268-missing-number) |
 | [0283-move-zeroes](https://github.com/emy05/Leetcode_Problems/tree/master/0283-move-zeroes) |
 | [0485-max-consecutive-ones](https://github.com/emy05/Leetcode_Problems/tree/master/0485-max-consecutive-ones) |
@@ -12,6 +13,7 @@
 ## Two Pointers
 |  |
 | ------- |
+| [0088-merge-sorted-array](https://github.com/emy05/Leetcode_Problems/tree/master/0088-merge-sorted-array) |
 | [0283-move-zeroes](https://github.com/emy05/Leetcode_Problems/tree/master/0283-move-zeroes) |
 | [2707-merge-two-2d-arrays-by-summing-values](https://github.com/emy05/Leetcode_Problems/tree/master/2707-merge-two-2d-arrays-by-summing-values) |
 ## Hash Table
@@ -34,5 +36,6 @@
 ## Sorting
 |  |
 | ------- |
+| [0088-merge-sorted-array](https://github.com/emy05/Leetcode_Problems/tree/master/0088-merge-sorted-array) |
 | [0268-missing-number](https://github.com/emy05/Leetcode_Problems/tree/master/0268-missing-number) |
 <!---LeetCode Topics End-->
