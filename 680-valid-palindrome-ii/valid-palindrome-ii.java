@@ -3,8 +3,7 @@ class Solution {
         int l = 0, r = s.length() - 1;
         while (l < r) {
             if (s.charAt(l) != s.charAt(r)) {
-                return isPalindrome(s.substring(0, l) + s.substring(l + 1)) ||
-                        isPalindrome(s.substring(0, r) + s.substring(r + 1));
+                return isPalindromeRange(s, l+1, r) || isPalindromeRange(s, l, r-1);
             }
             l++;
             r--;
@@ -12,14 +11,13 @@ class Solution {
         return true;
     }
 
-    private boolean isPalindrome(String s) {
-        int l = 0, r = s.length() - 1;
-        while (l < r) {
-            if (s.charAt(l) != s.charAt(r)) {
+    private boolean isPalindromeRange(String s, int left, int right) {
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
                 return false;
             }
-            l++;
-            r--;
+            left ++;
+            right --;
         }
         return true;
     }
