@@ -3,9 +3,9 @@ class Solution {
         int maxLen = 0;
         int left = 0;
 
-        for(int right = 0; right < nums.length; right++){
+        for(int right=0; right<nums.length; right++){
             if(nums[right] > threshold){
-                left = right + 1; // right is invalid so skip
+                left = right + 1;
                 continue;
             }
 
@@ -14,9 +14,10 @@ class Solution {
             }
 
             if(nums[left] % 2 != 0){
-                left = right + 1; //restart the window
+                left = right + 1;
                 continue;
             }
+
             maxLen = Math.max(maxLen, right-left+1);
         }
         return maxLen;
