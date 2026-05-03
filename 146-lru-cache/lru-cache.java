@@ -1,10 +1,10 @@
-public class Node {
+public class Node{
     int key;
     int val;
     Node prev;
     Node next;
 
-    public Node(int key, int val) {
+    public Node(int key, int val){
         this.key = key;
         this.val = val;
         this.prev = null;
@@ -13,7 +13,6 @@ public class Node {
 }
 
 class LRUCache {
-
     private int cap;
     private HashMap<Integer, Node> cache;
     private Node left;
@@ -24,18 +23,11 @@ class LRUCache {
         this.cache = new HashMap<>();
         this.left = new Node(0, 0);
         this.right = new Node(0, 0);
-        this.left.next = this.right;
-        this.right.prev = this.left;
+        this.left.next = right;
+        this.right.prev = left;
     }
 
-    private void remove(Node node) {
-        Node prev = node.prev;
-        Node nxt = node.next;
-        prev.next = nxt;
-        nxt.prev = prev;
-    }
-
-    private void insert(Node node) {
+    public void insert(Node node){
         Node prev = this.right.prev;
         prev.next = node;
         node.prev = prev;
@@ -43,8 +35,15 @@ class LRUCache {
         this.right.prev = node;
     }
 
+    public void remove(Node node){
+        Node prev = node.prev;
+        Node next = node.next;
+        prev.next = next;
+        next.prev = prev;
+    }
+    
     public int get(int key) {
-        if (cache.containsKey(key)) {
+        if(cache.containsKey(key)){
             Node node = cache.get(key);
             remove(node);
             insert(node);
@@ -52,19 +51,27 @@ class LRUCache {
         }
         return -1;
     }
-
+    
     public void put(int key, int value) {
-        if (cache.containsKey(key)) {
+        if(cache.containsKey(key)){
             remove(cache.get(key));
         }
+
         Node newNode = new Node(key, value);
         cache.put(key, newNode);
         insert(newNode);
 
-        if (cache.size() > cap) {
-            Node lru = this.left.next;
-            remove(lru);
-            cache.remove(lru.key);
+        if(cache.size() > cap){
+            Node LRU = this.left.next;
+            remove(LRU);
+            cache.remove(LRU.key);
         }
     }
 }
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
